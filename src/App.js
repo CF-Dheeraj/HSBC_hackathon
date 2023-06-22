@@ -5,6 +5,7 @@ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import SignUp from './components/SignUp'
 import Dashboard from './components/Dashboard'
 import Balance from './components/Balance'
+import Trend from './components/Trend'
 
 
 const App = () => {
@@ -12,16 +13,19 @@ const App = () => {
   const[auth,setAuth] = useState(false);
   const handleAuth = (status) =>{
     setAuth(status);
-    console.log(status);
+    console.log("This is the status "+status);
   }
   return (
     <>
       <Router>
+      <video src='/videos/bankers.mp4' autoPlay loop muted></video>
       <Navbar/>
       <Routes>
         <Route path='/' exact element={<Hero/>}/>
         <Route path='/sign-up' element={<SignUp handleAuth={handleAuth}/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
+        <Route path='/card_trend' element={<Trend/>}/>
+        
         
         <Route path='/balance_sheet' element={<Balance/>}/>
       </Routes>

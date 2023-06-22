@@ -3,31 +3,36 @@ import { Link } from 'react-router-dom';
 import './SignUp.css'
 
 
-const SignUp = ({handleAuth}) => {
+const SignUp = () => {
 
   const url = 'https://dp-beardboys.onrender.com';
-  let flag= false;
+  const [auth,setAuth]= useState(false);
 
   const[userData,setUserData] = useState([]);
   const [inputdata,setInputData] = useState({userId:'',password:''})
   const handleSubmit= ((e)=>{
-    // POST request using fetch inside useEffect React hook
-    e.preventDefault();
-    console.log(inputdata)
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(inputdata)
-    };
-    fetch('http://10.230.7.54:8082/users/Login', requestOptions)
-        .then(response => response.json())
-        .then(data => console.log("This is confirmation"+data));
-
     
-    
+      e.preventDefault();
+      console.log(inputdata)
+      const requestOptions = {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(inputdata)
+      };
+      fetch('http://10.230.7.54:8082/users/Login', requestOptions)
+          .then(response => response.json())
+          .then((data) => {
+            console.log(data)
+            if(data)
+            {
+              window.location.href='/dashboard'
+            }
+            else
+            {
+              alert("Please enter correct details");
+            }
+                });
       
-   
-// empty dependency array means this effect will only run once (like componentDidMount in classes)
 })
 
   return (
