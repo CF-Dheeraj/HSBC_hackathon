@@ -1,36 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import './SignUp.css'
 
-const SignUp = () => {
 
-  const userdata = [
-    {
-      custId:'12345',
-      pass:'12345'
-    },
-    {
-      custId:'admin',
-      pass:'admin'
-    },
+const SignUp = ({handleAuth}) => {
 
-  ]
+  const url = 'https://dp-beardboys.onrender.com';
+  let flag= false;
 
-  const [inputdata,setInputData] = useState({custId:'',psw:''})
-
-  const handleSubmit =(e)=>{
+  const[userData,setUserData] = useState([]);
+  const [inputdata,setInputData] = useState({userId:'',password:''})
+  const handleSubmit= ((e)=>{
+    // POST request using fetch inside useEffect React hook
     e.preventDefault();
-    let auth= true; // write a function here
-    if(auth)
-    {
-      window.location.href = '/dashboard'
-    }
-    else{
-      let warning = document.getElementById('not-found');
-      warning.classList.add('not-found-toggle');
-    }
-    setInputData({custId:'',psw:''});
+    console.log(inputdata)
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(inputdata)
+    };
+    fetch('http://10.230.7.54:8082/users/Login', requestOptions)
+        .then(response => response.json())
+        .then(data => console.log("This is confirmation"+data));
+
     
-  }
+    
+      
+   
+// empty dependency array means this effect will only run once (like componentDidMount in classes)
+})
+
   return (
     <div className='login-main-container'>
       <div className='login-container'>
@@ -43,13 +42,13 @@ const SignUp = () => {
 
             <div className="container">
               <label htmlFor="custId"><b>CustomerId</b></label>
-              <input type="text" placeholder="Enter Customer Id" name="custId" value={inputdata.custId} onChange={(e)=>{setInputData({custId:e.target.value})}} required/>
+              <input type="text" placeholder="Enter Customer Id" name="custId" value={inputdata.userId} onChange={(e)=>{setInputData({userId:e.target.value})}} required/>
 
               <label htmlFor="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" value={inputdata.psw} onChange={(e)=>{setInputData({...inputdata,psw:e.target.value})}} required/>
+              <input type="password" placeholder="Enter Password" name="psw" value={inputdata.password} onChange={(e)=>{setInputData({...inputdata,password:e.target.value})}} required/>
               <span id='not-found'>Probably entering wrong Id or Password</span>
                   
-              <button type="submit">Login</button>
+              <button type="submit" >Login</button>
               
             </div>
 
