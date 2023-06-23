@@ -8,7 +8,7 @@
 .table_body{
     width: 80%;
     margin-left: 10%;
-    margin-top: 90px;
+    margin-top: 390px;
     background-color: white;
     box-shadow: 5px 5px 5px gray;
 }
@@ -64,7 +64,7 @@ th{
     border: 1px solid black;
     box-shadow: 5px 5px 5px gray;
     position: absolute;
-    top: 475px;
+    top: 160px;
     left: 575px;
     padding: 10px 10px;
 }
@@ -78,5 +78,5 @@ th{
     width: 80%;
     height: 600px;
     margin-left: 10%;
-    margin-top: 270px;
+    margin-top: 20px;
 }

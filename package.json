@@ -4,7 +4,6 @@
   "private": true,
   "lockfileVersion": 3,
   "requires": true,
-  "homepage": "hsbchackathon",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

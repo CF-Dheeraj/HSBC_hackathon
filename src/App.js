@@ -17,7 +17,7 @@ const App = () => {
   }
   return (
     <>
-      <Router basename='{/hsbchackathon}'>
+      <Router>
         <video src='/videos/bankers.mp4' autoPlay loop muted></video>
         <Navbar/>
         <Routes>

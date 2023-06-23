@@ -139,12 +139,12 @@ const Balance = () => {
             
             <thead>
                 <tr>
-                    <th><select><option>ID</option></select></th>
-                    <th><select><option>Transaction Id</option></select></th>
-                    <th><select><option>Type Of transaction</option></select></th>
-                    <th><select><option>Amount</option></select></th>
-                    <th><select><option>Cr/Dr</option></select></th>
-                    <th><select><option>Transaction Date</option></select></th>
+                    <th>ID<i class='bx bx-filter-alt'></i></th>
+                    <th>Transaction Id<i class='bx bx-filter-alt'></i></th>
+                    <th>Type Of transaction<i class='bx bx-filter-alt'></i></th>
+                    <th>Amount<i class='bx bx-filter-alt'></i></th>
+                    <th>Cr/Dr<i class='bx bx-filter-alt'></i></th>
+                    <th>Transaction Date<i class='bx bx-filter-alt'></i></th>
                    
                 </tr>
                 
