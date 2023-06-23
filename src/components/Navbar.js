@@ -2,7 +2,10 @@ import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({auth}) => {
+  const handlelog = ()=>{
+    localStorage.removeItem('status')
+  }
   return (
     <>
       <nav className='navbar'>
@@ -16,7 +19,7 @@ const Navbar = () => {
               <div className='nav-right'>
                 <div className='nav-login'>
                 <Link to='/sign-up'>
-                      Login 
+                      {localStorage.getItem('status') ? <p onClick={handlelog}>Logout</p>: <p>Login</p>}
                   </Link>
                 </div>
                   

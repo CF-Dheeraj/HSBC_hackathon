@@ -7,18 +7,16 @@ const Balance = () => {
 
 //   const [bal_data,setBal_data]  = useState([{}])
 //   useEffect = (()=>{
-//     // const requestOptions = {
-//     //     method: 'GET',
-//     //     headers: { 'Content-Type': 'application/json' },
-//     //     body: JSON.stringify()
-//     // };
-//     // fetch('http://10.230.7.54:8082/users/getdetail?username=Ramesh', requestOptions)
-//     //     .then(response => response.json())
-//     //     .then((data) => {
-//     //       console.log(data);  
-//     //       setBal_data(data)
-//     //           });
-//     axios.get('http://10.230.7.54:8082/users/getdetail',{params:{username:'Ramesh'}}).then((res)=>console.log(res.data))
+//     const requestOptions = {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({"userId":"23456"})
+//     };
+//     fetch('http://10.230.7.54:8082/getTransactionsByUser', requestOptions)
+//         .then(response => response.json())
+//         .then((data) => {
+//             console.log(data)
+//           setBal_data(data)});
 
 //   },[] ) 
 
@@ -113,9 +111,9 @@ const Balance = () => {
                 <form action="#">
                     <label for="trans">Type Of Transaction</label>
                     <select name="transaction" id="trans">
-                        <option value="javascript">UPI</option>
-                        <option value="php">NetBanking</option>
-                        <option value="java">Banktobank</option>
+                        <option value="UPI">UPI</option>
+                        <option value="NetBanking" >NetBanking</option>
+                        <option value="Banktobank">Banktobank</option>
                     </select>
                     <label for="cred">Credited/Debited</label>
                     <select name="transaction" id="transaction">

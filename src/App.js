@@ -13,13 +13,14 @@ const App = () => {
   const[auth,setAuth] = useState(false);
   const handleAuth = (status) =>{
     setAuth(status);
-    console.log("This is the status "+status);
+    localStorage.setItem('status',auth)
+   
   }
   return (
     <>
       <Router>
         <video src='/videos/bankers.mp4' autoPlay loop muted></video>
-        <Navbar/>
+        <Navbar auth={auth}/>
         <Routes>
           <Route path='/' exact element={<Hero/>}/>
           <Route path='/sign-up' element={<SignUp handleAuth={handleAuth}/>}/>

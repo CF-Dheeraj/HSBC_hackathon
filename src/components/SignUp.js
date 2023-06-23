@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import './SignUp.css'
 
 
-const SignUp = () => {
+const SignUp = ({handleAuth}) => {
 
   const url = 'https://dp-beardboys.onrender.com';
-  const [auth,setAuth]= useState(false);
+  
 
   const[userData,setUserData] = useState([]);
   const [inputdata,setInputData] = useState({userId:'',password:''})
@@ -22,7 +22,7 @@ const SignUp = () => {
       fetch('http://10.230.7.54:8082/users/Login', requestOptions)
           .then(response => response.json())
           .then((data) => {
-            console.log(data)
+            handleAuth(data)
             if(data)
             {
               window.location.href='/dashboard'
