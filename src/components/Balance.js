@@ -7,17 +7,18 @@ const Balance = () => {
 
 //   const [bal_data,setBal_data]  = useState([{}])
 //   useEffect = (()=>{
-//     const requestOptions = {
-//         method: 'GET',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({'username':"Ramesh"})
-//     };
-//     fetch('http://10.230.7.54:8082/users/getdetail', requestOptions)
-//         .then(response => response.json())
-//         .then((data) => {
-//           console.log(data);  
-//           setBal_data(data)
-//               });
+//     // const requestOptions = {
+//     //     method: 'GET',
+//     //     headers: { 'Content-Type': 'application/json' },
+//     //     body: JSON.stringify()
+//     // };
+//     // fetch('http://10.230.7.54:8082/users/getdetail?username=Ramesh', requestOptions)
+//     //     .then(response => response.json())
+//     //     .then((data) => {
+//     //       console.log(data);  
+//     //       setBal_data(data)
+//     //           });
+//     axios.get('http://10.230.7.54:8082/users/getdetail',{params:{username:'Ramesh'}}).then((res)=>console.log(res.data))
 
 //   },[] ) 
 
