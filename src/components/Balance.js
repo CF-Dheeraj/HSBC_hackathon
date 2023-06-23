@@ -133,8 +133,9 @@ const Balance = () => {
                     <input type="submit" value="Filter" />
             </form>
         </div>
-        
+        <h2 className='table-label'>Transactions</h2>
         <table className='table_body'>
+            
             <thead>
                 <tr>
                     <th><select><option>ID</option></select></th>
@@ -142,7 +143,7 @@ const Balance = () => {
                     <th><select><option>Type Of transaction</option></select></th>
                     <th><select><option>Amount</option></select></th>
                     <th><select><option>Cr/Dr</option></select></th>
-                    <th><select><option>Creation Date</option></select></th>
+                    <th><select><option>Transaction Date</option></select></th>
                    
                 </tr>
                 
